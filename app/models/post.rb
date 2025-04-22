@@ -4,3 +4,4 @@ class Post < ApplicationRecord
   validates :content, presence: true
   belongs_to :user
 end
+#포스트루비
