@@ -1,17 +1,14 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
+<div id="<%= dom_id post %>" class="post-detail">
+  <div class="post-header">
+    <h2><%= post.title %></h2>
+    <p class="post-meta">
+      <strong>작성자:</strong> <%= post.user.nickname %> |
+      <strong>카테고리:</strong> <%= post.category&.name || '카테고리 없음' %> |
+      <strong>작성일:</strong> <%= post.created_at.strftime('%Y-%m-%d %H:%M') %>
+    </p>
+  </div>
 
-  <p>
-    <strong>Content:</strong>
-    <%= post.content %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= post.user_id %>
-  </p>
-
+  <div class="post-content">
+    <%= simple_format(post.content) %>
+  </div>
 </div>

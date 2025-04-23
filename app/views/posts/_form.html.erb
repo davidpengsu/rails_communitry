@@ -18,7 +18,12 @@
 
   <div>
     <%= form.label :content, style: "display: block" %>
-    <%= form.textarea :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div>
+    <%= form.label :카테고리, style: "display: block" %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: '카테고리를 선택해주세요' } %>
   </div>
 
   <div>
